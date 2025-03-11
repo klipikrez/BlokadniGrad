@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BootManager : MonoBehaviour
 {
-    public List<GameObject> componentsToLoad = new List<GameObject>();
+    public GameObject player;
 
 public void Awake()
 {
@@ -14,4 +14,5 @@ public void Awake()
         Instantiate(component,Vector3.zero,quaternion.identity);
     }
 }
+
 }
