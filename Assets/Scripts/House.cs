@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using OutlineFx;
 
 public class House : MonoBehaviour
 {
@@ -18,13 +18,13 @@ public class House : MonoBehaviour
     public void Select()
     {
         GameObject graphic = transform.Find("Graphic").gameObject;
-        graphic.GetComponent<OutlineFx>().enabled = true;
+        graphic.GetComponent<OutlineFx.OutlineFx>().enabled = true;
     }
 
     public void DeSelect()
     {
         GameObject graphic = transform.Find("Graphic").gameObject;
-        graphic.GetComponent<OutlineFx>().enabled = false;
+        graphic.GetComponent<OutlineFx.OutlineFx>().enabled = false;
     }
 
     public void Click()
