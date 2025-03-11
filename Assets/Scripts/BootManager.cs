@@ -10,6 +10,7 @@ public class BootManager : MonoBehaviour
     public GameObject townPrefab;
     public GameObject EventSystemPrefab;
     public GameObject Grass;
+    public GameObject Login;
     [NonSerialized]
     public PlayerMovement playerMovement;
     //public PlayerMovement town;
@@ -21,6 +22,7 @@ public class BootManager : MonoBehaviour
         Instantiate(townPrefab, Vector3.zero, quaternion.identity);
         Instantiate(EventSystemPrefab, Vector3.zero, quaternion.identity);
         Instantiate(Grass, Vector3.zero, quaternion.identity);
+        Instantiate(Login, Vector3.zero, quaternion.identity);
     }
 
 }
