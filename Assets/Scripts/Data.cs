@@ -20,9 +20,19 @@ public class Data : MonoBehaviour
     public class AllData
     {
         public List<Faculty> faculties = new List<Faculty>();
+        public List<User> users = new List<User>();
         public AllData ()
         {
 
+        }
+        public User SignUp(string username, string password)
+        {
+            //.add
+            return null;
+        }
+        public User LogIn()
+        {
+            return null;
         }
     }
 
@@ -31,45 +41,58 @@ public class Data : MonoBehaviour
         public List<Group> groups = new List<Group>();
     }
 
-
     public class User
     {
+        public string username;
+        public string password;
         public string index;//id
         public string faculty;
         public string name;
         public string surename;
-        public int expirience;
-        public DateTime lastActivity;
-        public Rank rank;
+        public int experience;
+        public string lastActivity;
+        public int rank;
+
+        public User(string username, string password,string index, string faculty, string name, string surename, int experience, string lastActivity,int rank)
+        {
+            this.username = username;
+            this.password = password;
+            this.index = index;
+            this.faculty = faculty;
+            this.name = name;
+            this.surename = surename;
+            this.experience = experience;
+            this.lastActivity = lastActivity;
+            this.rank = rank;
+
+        }
 
         public void UpdateRank()
         {
             
-            if (expirience < 5)
+            if (experience < 5)
             {
-                rank = Rank.rank1;
+                rank = 1;
             } else
-            if (expirience < 15)
+            if (experience < 15)
             {
-                rank = Rank.rank2;
+                rank = 2;
             }
             else
-            if (expirience < 25)
+            if (experience < 25)
             {
-                rank = Rank.rank3;
+                rank = 3;
             }
             else
-            if (expirience < 45)
+            if (experience < 45)
             {
-                rank = Rank.rank4;
+                rank = 4;
             }
             return;
-
-
         }
         public void AddExpirience(Task task)
         {
-            expirience += task.expirience;
+            experience += task.experience;
         }
 
     }
@@ -77,7 +100,7 @@ public class Data : MonoBehaviour
     public enum Role
     {
         Student = 0,
-        Admin = 1,
+        Koordinator = 1,
 
     }
     public enum Rank
@@ -93,13 +116,27 @@ public class Data : MonoBehaviour
     {
         public string name;//id
         public string faculty;
-        public List<(string index, Role role)> group_role;
+        public List<(string index, int role)> group_role;
         public List<Task> tasks;
         public List<Task> DoneTasks;
 
         public void SortByTime()
         {
-            tasks.Sort((task1, task2) => task1.timePublished.CompareTo(task2.timePublished));
+            for (int i = 0; i < tasks.Count - 1; i++)
+            {
+                for (int j = i + 1; j < tasks.Count; j++)
+                {
+                    DateTime vreme1 = DateTime.Parse(tasks[i].timePublished); // Pretvaranje stringa u DateTime
+                    DateTime vreme2 = DateTime.Parse(tasks[j].timePublished);
+
+                    if (vreme1 > vreme2) // Ako je vreme1 posle vreme2, zameni mesta
+                    {
+                        Task temp = tasks[i];
+                        tasks[i] = tasks[j];
+                        tasks[j] = temp;
+                    }
+                }
+            }
         }
 
         public void DeleteTask(Task task)
@@ -111,16 +148,32 @@ public class Data : MonoBehaviour
     }
     public class Task
     {
-        public int id;
-        public DateTime timePublished;
+        //public int id;
+        public string timePublished;
         public string name;
         public string description;
         public int maxUsers;
         public List<User> users;
-        public int expirience;
+        public int experience;//isto kao task Difficulty
         public Group group;
         public float expectedDurationHours;
-        public TaskDifficulty taskDifficulty;
+
+        public Task(string name, string description, int maxUsers, int experience, float expectedDurationHours, Group group)
+        {
+            experience =(int) Mathf.Clamp(experience,1,4);
+
+            this.name = name;
+            this.description = description;
+            this.maxUsers = maxUsers;
+            this.experience = experience;
+            this.expectedDurationHours = expectedDurationHours;
+            this.group = group;
+
+            timePublished = DateTime.Now.ToString();
+            users = new List<User>();
+
+            group.tasks.Add(this);
+        }
 
         public void AcceptTask(User user)
         {
@@ -153,3 +206,4 @@ public class Data : MonoBehaviour
     }
 
 }
+
