@@ -46,7 +46,7 @@ public class PlayerSelection : MonoBehaviour
         {
             if (curentlyHovering == null)
             {
-                curentlyHovering = hit.collider.gameObject.GetComponent<House>();
+                curentlyHovering = hit.collider.gameObject.transform.parent.GetComponent<House>();
                 curentlyHovering.Select();
                 Debug.Log("Selected: " + curentlyHovering.gameObject.name);
             }

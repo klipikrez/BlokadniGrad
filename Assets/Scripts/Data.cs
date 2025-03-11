@@ -8,7 +8,7 @@ public class Data : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -19,26 +19,37 @@ public class Data : MonoBehaviour
 
     public class AllData
     {
-        public List<Faculty> faculties = new List<Faculty>();
-        public List<User> users = new List<User>();
-        public AllData ()
-        {
-
-        }
-        public User SignUp(string username, string password)
-        {
-            //.add
-            return null;
-        }
-        public User LogIn()
-        {
-            return null;
-        }
-    }
-
-    public class Faculty
-    { 
         public List<Group> groups = new List<Group>();
+        public List<User> users = new List<User>();
+        public AllData()
+        {
+
+        }
+        public User SignUp(string username, string password, string index, string faculty, string name, string surename)
+        {
+            foreach (User user0 in users)
+            {
+                if (user0.username == username)
+                {
+                    return null;
+                }
+            }
+            string lastActivity = DateTime.Now.ToString();
+            User user = new User(username, password, index, faculty, name, surename, 0, lastActivity, 0);
+            users.Add(user);
+            return user;
+        }
+        public User LogIn(string username, string password)
+        {
+            foreach (User user in users)
+            {
+                if (user.username == username && user.password == password)
+                {
+                    return user;
+                }
+            }
+            return null;
+        }
     }
 
     public class User
@@ -53,7 +64,7 @@ public class Data : MonoBehaviour
         public string lastActivity;
         public int rank;
 
-        public User(string username, string password,string index, string faculty, string name, string surename, int experience, string lastActivity,int rank)
+        public User(string username, string password, string index, string faculty, string name, string surename, int experience, string lastActivity, int rank)
         {
             this.username = username;
             this.password = password;
@@ -69,11 +80,12 @@ public class Data : MonoBehaviour
 
         public void UpdateRank()
         {
-            
+
             if (experience < 5)
             {
                 rank = 1;
-            } else
+            }
+            else
             if (experience < 15)
             {
                 rank = 2;
@@ -104,7 +116,7 @@ public class Data : MonoBehaviour
 
     }
     public enum Rank
-    { 
+    {
         rank1 = 0,
         rank2 = 1,
         rank3 = 2,
@@ -160,7 +172,7 @@ public class Data : MonoBehaviour
 
         public Task(string name, string description, int maxUsers, int experience, float expectedDurationHours, Group group)
         {
-            experience =(int) Mathf.Clamp(experience,1,4);
+            experience = (int)Mathf.Clamp(experience, 1, 4);
 
             this.name = name;
             this.description = description;
@@ -183,7 +195,7 @@ public class Data : MonoBehaviour
             }
         }
 
-        public void FinishTask (User user)//treba admin da approveuje
+        public void FinishTask(User user)//treba admin da approveuje
         {
             user.AddExpirience(this);
             group.DeleteTask(this);

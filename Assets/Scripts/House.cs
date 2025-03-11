@@ -13,6 +13,7 @@ public class House : MonoBehaviour
     public void Start()
     {
         CloseUi();
+        gameObject.transform.Find("Graphic").gameObject.AddComponent<PolygonCollider2D>();
     }
 
     public void Select()
