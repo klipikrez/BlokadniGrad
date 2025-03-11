@@ -156,6 +156,7 @@ MonoBehaviour:
   townPrefab: {fileID: 6069174473243423816, guid: 6de23b69c8f4eb94a964edd8db3ca76d, type: 3}
   EventSystemPrefab: {fileID: 2953060684320260960, guid: 33388828527cb60428726c5fdfcd972c, type: 3}
   Grass: {fileID: 1999501254953311898, guid: d6592dc2e648b3547821c40388e9ba6f, type: 3}
+  Login: {fileID: 557730070839100443, guid: 98604cbe1a6a99b488ed3cb16f80a3a1, type: 3}
 --- !u!4 &992240044
 Transform:
   m_ObjectHideFlags: 0
