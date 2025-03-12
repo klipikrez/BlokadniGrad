@@ -9,19 +9,29 @@ using Unity.Mathematics;
 public class Login : MonoBehaviour
 {
     public User user = null;
-    public TMP_InputField[] paswordFields;
     public GameObject loginUI;
     public GameObject registerUI;
     // Start is called before the first frame update
     void Start()
     {
-        foreach (TMP_InputField password in paswordFields)
-            password.contentType = TMP_InputField.ContentType.Password;
+        UpdateRank();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+    }
+    public Image progress;
+    public GameObject rankParent;
+    public void UpdateRank ()
+    {
+        //imas 4 slika i jednu ukljuci samo
+        //da sredis score i obojenost tj fill (reference na tmp i gameObject)
+        if (user == null)
+        {
+
+        }
 
     }
     public void CloseLoginUi()
