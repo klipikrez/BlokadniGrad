@@ -157,10 +157,13 @@ MonoBehaviour:
   EventSystemPrefab: {fileID: 2953060684320260960, guid: 33388828527cb60428726c5fdfcd972c, type: 3}
   Grass: {fileID: 1999501254953311898, guid: d6592dc2e648b3547821c40388e9ba6f, type: 3}
   Login: {fileID: 557730070839100443, guid: 98604cbe1a6a99b488ed3cb16f80a3a1, type: 3}
+  Put: {fileID: 1491586017302569642, guid: 9ac41361a15b2eb47b058c15714e06ce, type: 3}
+  Ambient: {fileID: 3529396764937045681, guid: d9696f5c010ead84895c4858f7eb1754, type: 3}
+  Error: {fileID: 1374583312192183365, guid: 34bdb0ca5253b084394e5bbc363a7796, type: 3}
+  uiOpen: 0
   data:
     groups:
     - name: zxczxc
-      faculty: zxczxczxc
       tasks:
       - timePublished: zxczx
         name: zxczxczx
@@ -168,13 +171,10 @@ MonoBehaviour:
         maxUsers: 34
         users: []
         experience: 2
-        group:
-          name: 
-          faculty: 
-          tasks: []
-          DoneTasks: []
         expectedDurationHours: 3
+        dateOfExecution: 
       DoneTasks: []
+      description: 
     users: []
 --- !u!4 &992240044
 Transform:
