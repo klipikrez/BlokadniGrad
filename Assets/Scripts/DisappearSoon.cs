@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ErrorScript : MonoBehaviour
+public class DisappearSoon : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

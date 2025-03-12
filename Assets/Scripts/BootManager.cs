@@ -15,6 +15,7 @@ public class BootManager : MonoBehaviour
     public GameObject Ambient;
 
     public GameObject Error;
+    public GameObject Good;
     public bool uiOpen = false;
     [SerializeField]
     public Data data;

@@ -25,7 +25,8 @@ public class Data
     }
     public void ForDebug()
     {
-        SignUp("user1", "pass123", "0001/2021", "Jana", "Micic");
+        User user1 = SignUp("user1", "pass123", "0001/2021", "Jana", "Micic");
+        user1.experience = 29;
         SignUp("user2", "pass123", "0002/2022", "Milos", "Petrovic");
         SignUp("user3", "pass123", "0003/2023", "Ivan", "Rados");
         SignUp("user4", "pass123", "0004/2024", "Nikola", "Jankovic");

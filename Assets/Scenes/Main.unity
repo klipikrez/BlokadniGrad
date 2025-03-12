@@ -160,6 +160,7 @@ MonoBehaviour:
   Put: {fileID: 1491586017302569642, guid: 9ac41361a15b2eb47b058c15714e06ce, type: 3}
   Ambient: {fileID: 3529396764937045681, guid: d9696f5c010ead84895c4858f7eb1754, type: 3}
   Error: {fileID: 1374583312192183365, guid: 34bdb0ca5253b084394e5bbc363a7796, type: 3}
+  Good: {fileID: 268565504050821623, guid: ac2bf715b49af934c83d39eba578f49d, type: 3}
   uiOpen: 0
   data:
     groups:
