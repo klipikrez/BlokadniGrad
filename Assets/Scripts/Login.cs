@@ -16,7 +16,8 @@ public class Login : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateRank2(); 
+        user = null;
+        UpdateRank2();
         foreach (TMP_InputField password in paswordFields)
             password.contentType = TMP_InputField.ContentType.Password;
     }
@@ -36,7 +37,7 @@ public class Login : MonoBehaviour
         progress.fillAmount = 0;
         rankParent.SetActive(false);
     }
-        public void UpdateRank()
+    public void UpdateRank()
     {
         //imas 4 slika i jednu ukljuci samo
         //da sredis score i obojenost tj fill (reference na tmp i gameObject)
@@ -51,7 +52,7 @@ public class Login : MonoBehaviour
             rankParent.SetActive(true);
             experience.text = user.experience.ToString();
             progress.fillAmount = UnityEngine.Random.Range(0.15f, 0.7f);
-            GameObject[] child =  { 
+            GameObject[] child =  {
                 rankParent.transform.GetChild(0).gameObject ,
                 rankParent.transform.GetChild(1).gameObject ,
                 rankParent.transform.GetChild(2).gameObject ,

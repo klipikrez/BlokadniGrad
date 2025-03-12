@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 103884447933537383, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
+      propertyPath: HideForGuest
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 967396841155321605, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
       propertyPath: m_Name
       value: obelisk
@@ -34,6 +38,10 @@ PrefabInstance:
     - target: {fileID: 3318977408091185112, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684951718060000605, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6148983152564343203, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
       propertyPath: m_IsActive

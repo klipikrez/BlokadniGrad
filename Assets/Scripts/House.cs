@@ -12,7 +12,7 @@ public class House : MonoBehaviour
     public static bool ClickedThisFrame = false;
     public GameObject uiMaster;
     public int houseID;
-    public HideForUser hideForUser;
+    public HideForUser[] hideForUser;
     public TMP_Text title;
     public TMP_Text description;
 
@@ -44,7 +44,8 @@ public class House : MonoBehaviour
     {
         uiMaster.SetActive(true);
         uiOpen = true;
-        hideForUser.Check();
+        foreach (HideForUser hide in hideForUser)
+            hide.Check();
     }
 
     public void CloseUi()
