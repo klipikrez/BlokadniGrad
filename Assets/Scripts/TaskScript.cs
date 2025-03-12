@@ -17,4 +17,10 @@ public class TaskScript : MonoBehaviour
         tasks1.SetText(task.description, task.experience);
 
     }
+
+    public void SetStrings(Task task)
+    {
+        title.text = task.name;
+        date.text = task.timePublished;
+    }
 }

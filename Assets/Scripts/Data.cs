@@ -125,6 +125,13 @@ public class Group
     [SerializeField]
     public List<Task> DoneTasks;
 
+    public Group()
+    {
+        name = "ssd";
+        faculty = "sdasd";
+
+    }
+
     public void SortByTime()
     {
         for (int i = 0; i < tasks.Count - 1; i++)
