@@ -13,8 +13,9 @@ public class TaskScript : MonoBehaviour
 
     public void ClickedMe()
     {
+
         Task task = BootManager.Instance.data.groups[tasks1.house.houseID].tasks[this.transform.GetSiblingIndex()];
-        tasks1.SetText(task.description, task.experience);
+        tasks1.SetText(task.description, task.experience, this.transform.GetSiblingIndex());
 
     }
 
