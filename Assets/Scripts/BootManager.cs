@@ -11,8 +11,13 @@ public class BootManager : MonoBehaviour
     public GameObject EventSystemPrefab;
     public GameObject Grass;
     public GameObject Login;
+    public GameObject Put;
+    public GameObject Ambient;
+
+    public GameObject Error;
+    public bool uiOpen = false;
     [SerializeField]
-    public AllData data;
+    public Data data;
     [NonSerialized]
     public PlayerMovement playerMovement;
     //public PlayerMovement town;
@@ -20,12 +25,16 @@ public class BootManager : MonoBehaviour
 
     public void Awake()
     {
+        data = new Data();
+
         Instance = this;
         playerMovement = Instantiate(playerPrefab, Vector3.zero, quaternion.identity).GetComponent<PlayerMovement>();
         Instantiate(townPrefab, Vector3.zero, quaternion.identity);
         Instantiate(EventSystemPrefab, Vector3.zero, quaternion.identity);
         Instantiate(Grass, Vector3.zero, quaternion.identity);
         Instantiate(Login, Vector3.zero, quaternion.identity);
+        Instantiate(Put, new Vector3(1,-1.3f,0), quaternion.identity);
+        Instantiate(Ambient, Vector3.zero, quaternion.identity);
     }
 
 }

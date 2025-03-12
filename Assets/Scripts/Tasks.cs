@@ -13,9 +13,6 @@ public class Tasks : MonoBehaviour
 
     private void Start()
     {
-        AddTask(new Task("BOB", "on voli banane", 6, 3, 2, new Group()));
-        AddTask(new Task("BOB", "on voli banane", 6, 3, 2, new Group()));
-        AddTask(new Task("BOB", "on voli banane", 6, 3, 2, new Group()));
     }
 
     public void SetText(string desc, int score)
@@ -28,6 +25,11 @@ public class Tasks : MonoBehaviour
     {
         TaskScript taskScript = Instantiate(TaskPrefab, transform).GetComponent<TaskScript>();
         taskScript.SetStrings(task);
+    }
+
+    public Group GetGroup ()
+    {
+        return BootManager.Instance.data.GetGroupFromHouseName(house.gameObject.name);
     }
 
 }

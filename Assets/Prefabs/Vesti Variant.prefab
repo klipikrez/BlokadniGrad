@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: obelisk
       objectReference: {fileID: 0}
+    - target: {fileID: 2073079272208385003, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073079272208385003, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6657909935245845028, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.18
@@ -21,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8000279400172347367, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
       propertyPath: m_Name
-      value: House
+      value: Vesti Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8560082271112622419, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
       propertyPath: m_Sprite

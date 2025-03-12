@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerSelection : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class PlayerSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
         if (House.uiOpen) return;
         if (House.ClickedThisFrame) { House.ClickedThisFrame = false; return; }
         MouseOver();

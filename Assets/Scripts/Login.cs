@@ -7,7 +7,10 @@ using UnityEngine.UI;
 
 public class Login : MonoBehaviour
 {
+    public User user = null;
     public TMP_InputField[] paswordFields;
+    public GameObject loginUI;
+    public GameObject registerUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,44 @@ public class Login : MonoBehaviour
     void Update()
     {
 
+    }
+    public void CloseLoginUi()
+    {
+        Debug.Log("closeui " + gameObject.name);
+        House.ClickedThisFrame = true;
+        loginUI.SetActive(false);
+        BootManager.Instance.uiOpen  = false;
+    }
+
+    public void CloseRegisterUi()
+    {
+        Debug.Log("closeui " + gameObject.name);
+        House.ClickedThisFrame = false;
+        registerUI.SetActive(false);
+        BootManager.Instance.uiOpen = false;
+    }
+    public void OpenRegisterUi()
+    {
+        Debug.Log("closeui " + gameObject.name);
+        House.ClickedThisFrame = false;
+        registerUI.SetActive(true);
+        BootManager.Instance.uiOpen = true;
+    }
+    public void OpenLoginUi()
+    {
+        Debug.Log("closeui " + gameObject.name);
+        House.ClickedThisFrame = false;
+        loginUI.SetActive(true);
+        BootManager.Instance.uiOpen = true;
+    }
+
+    public void LogIn()
+    {
+        string username = "";
+        string password = "";
+        user = BootManager.Instance.data.LogIn(username,password);
+
+        return;
     }
 
     public void OpenFile()
