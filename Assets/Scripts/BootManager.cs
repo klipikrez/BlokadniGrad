@@ -23,6 +23,8 @@ public class BootManager : MonoBehaviour
     public PlayerMovement playerMovement;
     //public PlayerMovement town;
     public static BootManager Instance;
+    [NonSerialized]
+    public Login login;
 
     public void Awake()
     {
@@ -33,8 +35,8 @@ public class BootManager : MonoBehaviour
         Instantiate(townPrefab, Vector3.zero, quaternion.identity);
         Instantiate(EventSystemPrefab, Vector3.zero, quaternion.identity);
         Instantiate(Grass, Vector3.zero, quaternion.identity);
-        Instantiate(Login, Vector3.zero, quaternion.identity);
-        Instantiate(Put, new Vector3(1,-1.3f,0), quaternion.identity);
+        login = Instantiate(Login, Vector3.zero, quaternion.identity).GetComponent<Login>();
+        Instantiate(Put, new Vector3(1, -1.3f, 0), quaternion.identity);
         Instantiate(Ambient, Vector3.zero, quaternion.identity);
     }
 

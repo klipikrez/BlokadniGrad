@@ -24,7 +24,7 @@ public class Login : MonoBehaviour
     }
     public Image progress;
     public GameObject rankParent;
-    public void UpdateRank ()
+    public void UpdateRank()
     {
         //imas 4 slika i jednu ukljuci samo
         //da sredis score i obojenost tj fill (reference na tmp i gameObject)
@@ -36,29 +36,25 @@ public class Login : MonoBehaviour
     }
     public void CloseLoginUi()
     {
-        Debug.Log("closeui " + gameObject.name);
         House.ClickedThisFrame = true;
         loginUI.SetActive(false);
-        BootManager.Instance.uiOpen  = false;
+        BootManager.Instance.uiOpen = false;
     }
 
     public void CloseRegisterUi()
     {
-        Debug.Log("closeui " + gameObject.name);
         House.ClickedThisFrame = false;
         registerUI.SetActive(false);
         BootManager.Instance.uiOpen = false;
     }
     public void OpenRegisterUi()
     {
-        Debug.Log("closeui " + gameObject.name);
         House.ClickedThisFrame = false;
         registerUI.SetActive(true);
         BootManager.Instance.uiOpen = true;
     }
     public void OpenLoginUi()
     {
-        Debug.Log("closeui " + gameObject.name);
         House.ClickedThisFrame = false;
         loginUI.SetActive(true);
         BootManager.Instance.uiOpen = true;
@@ -71,7 +67,7 @@ public class Login : MonoBehaviour
     {
         string username = usernameLogin.text;
         string password = passwordLogin.text;
-        user = BootManager.Instance.data.LogIn(username,password);
+        user = BootManager.Instance.data.LogIn(username, password);
 
         if (user == null)
         {
@@ -151,10 +147,8 @@ public class Login : MonoBehaviour
         string path = EditorUtility.OpenFilePanel("Izaberi fajl", "", "txt");
         if (!string.IsNullOrEmpty(path))
         {
-            Debug.Log("Izabran fajl: " + path);
         }
 #else
-        Debug.Log("File dialog je dostupan samo u editoru.");
 #endif
     }
 }

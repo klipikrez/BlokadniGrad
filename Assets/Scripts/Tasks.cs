@@ -41,7 +41,6 @@ public class Tasks : MonoBehaviour
 
     public void RemoveTask()
     {
-        Debug.Log(transform.GetChild(currentTask).name);
         if (currentTask < 0) return;
         currentTask = -52;
         BootManager.Instance.data.groups[house.houseID].DeleteTask(BootManager.Instance.data.groups[house.houseID].tasks[currentTask]);

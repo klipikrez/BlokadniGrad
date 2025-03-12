@@ -36,14 +36,12 @@ public class House : MonoBehaviour
 
     public void OpenUi()
     {
-        Debug.Log("openui " + gameObject.name);
         uiMaster.SetActive(true);
         uiOpen = true;
     }
 
     public void CloseUi()
     {
-        Debug.Log("closeui " + gameObject.name);
         House.ClickedThisFrame = true;
         uiMaster.SetActive(false);
         uiOpen = false;

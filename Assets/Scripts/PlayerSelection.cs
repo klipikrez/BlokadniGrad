@@ -40,7 +40,6 @@ public class PlayerSelection : MonoBehaviour
             if (curentlyHovering != null)
             {
                 curentlyHovering.DeSelect();
-                Debug.Log("deSelected: " + curentlyHovering.gameObject.name);
                 curentlyHovering = null;
 
             }
@@ -52,7 +51,6 @@ public class PlayerSelection : MonoBehaviour
             {
                 curentlyHovering = hit.collider.gameObject.transform.parent.GetComponent<House>();
                 curentlyHovering.Select();
-                Debug.Log("Selected: " + curentlyHovering.gameObject.name);
             }
 
 

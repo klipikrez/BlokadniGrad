@@ -69,7 +69,7 @@ public class Data
         Task task7 = new Task("Pregovori sa upravom", "Formirati delegaciju koja ce pregovarati sa upravom fakulteta", 3, 4, 1f, "2025-03-15");
         Task task8 = new Task("Medicinska pomoc", "Obezbediti medicinsku podrsku za ucesnike protesta", 2, 3, 4.5f, "2025-03-15");
 
-        List<Task> tasks = new List<Task> { task1,task2,task3,task4,task5,task6,task7,task8 };
+        List<Task> tasks = new List<Task> { task1, task2, task3, task4, task5, task6, task7, task8 };
 
         for (int i = 0; i < groupNames.Count(); i++)
         {
@@ -80,7 +80,7 @@ public class Data
     }
     public void DeleteInactive()
     {
-        foreach(User user in users)
+        foreach (User user in users)
         {
             if (DateTime.Now - DateTime.Parse(user.lastActivity) > TimeSpan.FromDays(14))
             {
@@ -258,6 +258,15 @@ public class Group
     {
         user.AddExpirience(task);
         tasks.Remove(task);
+    }
+
+    public bool IsAdmin(string index)
+    {
+        foreach ((string index, int role) user in user_role)
+        {
+            if (user.role == 1) return true;
+        }
+        return false;
     }
 
 }
