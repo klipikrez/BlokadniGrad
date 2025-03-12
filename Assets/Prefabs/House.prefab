@@ -1425,13 +1425,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015652771830029227}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2722915637206745704}
-  m_Father: {fileID: 8354940433469407343}
-  m_RootOrder: 13
+  m_Father: {fileID: 7646396879580799094}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -4311,7 +4311,6 @@ RectTransform:
   - {fileID: 5186962463702459211}
   - {fileID: 7646396879580799094}
   - {fileID: 3942027352364657169}
-  - {fileID: 5464367731060396996}
   m_Father: {fileID: 1166064018162885716}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7198,6 +7197,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiMaster: {fileID: 2885135074540992743}
   houseID: 0
+  hideForUser: {fileID: 2368630382093401855}
+  title: {fileID: 322307337720385251}
+  description: {fileID: 596465260702129341}
 --- !u!1 &8268828080176101786
 GameObject:
   m_ObjectHideFlags: 0
@@ -7992,6 +7994,7 @@ RectTransform:
   - {fileID: 6379840374271503905}
   - {fileID: 3987246186526617413}
   - {fileID: 8037756417912456891}
+  - {fileID: 5464367731060396996}
   m_Father: {fileID: 8354940433469407343}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

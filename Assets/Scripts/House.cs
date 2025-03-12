@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using OutlineFx;
+using System;
+using TMPro;
 
 public class House : MonoBehaviour
 {
@@ -10,10 +12,15 @@ public class House : MonoBehaviour
     public static bool ClickedThisFrame = false;
     public GameObject uiMaster;
     public int houseID;
+    public HideForUser hideForUser;
+    public TMP_Text title;
+    public TMP_Text description;
 
     public void Start()
     {
         CloseUi();
+        title.text = BootManager.Instance.data.groups[houseID].name;
+        description.text = BootManager.Instance.data.groups[houseID].description;
         gameObject.transform.Find("Graphic").gameObject.AddComponent<PolygonCollider2D>();
     }
 
@@ -33,11 +40,11 @@ public class House : MonoBehaviour
     {
         OpenUi();
     }
-
     public void OpenUi()
     {
         uiMaster.SetActive(true);
         uiOpen = true;
+        hideForUser.Check();
     }
 
     public void CloseUi()

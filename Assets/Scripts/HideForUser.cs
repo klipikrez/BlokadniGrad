@@ -7,12 +7,14 @@ public class HideForUser : MonoBehaviour
     public House house = null;
 
     // Start is called before the first frame update
-    void Start()
+    public void Check()
     {
 
-        string userInex = BootManager.Instance.login.user.index;
-        if (!BootManager.Instance.data.groups[house.houseID].IsAdmin(userInex)) this.gameObject.SetActive(false);
-        else this.gameObject.SetActive(true);
+        Debug.Log("babababa");
+        string userInex = BootManager.Instance.login.user != null ? BootManager.Instance.login.user.index : "babababababa";
+
+        gameObject.SetActive(BootManager.Instance.data.groups[house.houseID].IsAdmin(userInex));
+        Debug.Log(gameObject.activeSelf + " " + BootManager.Instance.data.groups[house.houseID].user_role[0].index + " " + BootManager.Instance.data.groups[house.houseID].user_role[0].role);
     }
 
 

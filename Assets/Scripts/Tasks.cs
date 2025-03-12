@@ -42,9 +42,10 @@ public class Tasks : MonoBehaviour
     public void RemoveTask()
     {
         if (currentTask < 0) return;
-        currentTask = -52;
+
         BootManager.Instance.data.groups[house.houseID].DeleteTask(BootManager.Instance.data.groups[house.houseID].tasks[currentTask]);
         Destroy(transform.GetChild(currentTask).gameObject);
+        currentTask = -52;
     }
 
 }

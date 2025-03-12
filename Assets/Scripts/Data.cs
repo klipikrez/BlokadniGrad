@@ -264,8 +264,10 @@ public class Group
     {
         foreach ((string index, int role) user in user_role)
         {
-            if (user.role == 1) return true;
+            Debug.Log(user.index + " == " + index + " || " + user.role);
+            if (user.index == index && user.role == 1) { Debug.Log("is admin"); return true; }
         }
+        Debug.Log("No admin");
         return false;
     }
 

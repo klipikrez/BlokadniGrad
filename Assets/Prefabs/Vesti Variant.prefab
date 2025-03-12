@@ -7,16 +7,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 74079535185231117, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 967396841155321605, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
       propertyPath: m_Name
       value: obelisk
       objectReference: {fileID: 0}
     - target: {fileID: 2073079272208385003, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2073079272208385003, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2885135074540992743, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318977408091185112, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318977408091185112, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148983152564343203, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6657909935245845028, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
@@ -27,9 +47,29 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.46
       objectReference: {fileID: 0}
+    - target: {fileID: 7990104675107193536, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990104675107193536, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -17
+      objectReference: {fileID: 0}
     - target: {fileID: 8000279400172347367, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
       propertyPath: m_Name
       value: Vesti Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8263623659933621290, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8263623659933621290, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8263623659933621290, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 8560082271112622419, guid: 53e4bf31e1e58b44596972547ff1792b, type: 3}
       propertyPath: m_Sprite
