@@ -9,6 +9,7 @@ public class House : MonoBehaviour
     public static bool uiOpen = false;
     public static bool ClickedThisFrame = false;
     public GameObject uiMaster;
+    public int houseID;
 
     public void Start()
     {
