@@ -174,15 +174,12 @@ public class User
             rank = 2;
         }
         else
-        if (experience < 25)
+        if (experience < 35)
         {
             rank = 3;
         }
         else
-        if (experience < 45)
-        {
             rank = 4;
-        }
         return;
     }
     public void AddExpirience(Task task)

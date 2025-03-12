@@ -5,16 +5,20 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using Unity.Mathematics;
+using System.Reflection;
 
 public class Login : MonoBehaviour
 {
     public User user = null;
     public GameObject loginUI;
     public GameObject registerUI;
+    public List<TMP_InputField> paswordFields = new List<TMP_InputField>();
     // Start is called before the first frame update
     void Start()
     {
-        UpdateRank();
+        UpdateRank2(); 
+        foreach (TMP_InputField password in paswordFields)
+            password.contentType = TMP_InputField.ContentType.Password;
     }
 
     // Update is called once per frame
@@ -23,14 +27,59 @@ public class Login : MonoBehaviour
 
     }
     public Image progress;
+    public TMP_Text experience;
     public GameObject rankParent;
-    public void UpdateRank()
+
+    public void UpdateRank2()
+    {
+        experience.text = "0";
+        progress.fillAmount = 0;
+        rankParent.SetActive(false);
+    }
+        public void UpdateRank()
     {
         //imas 4 slika i jednu ukljuci samo
         //da sredis score i obojenost tj fill (reference na tmp i gameObject)
         if (user == null)
         {
+            experience.text = "0";
+            progress.fillAmount = 0;
+            rankParent.SetActive(false);
+        }
+        else
+        {
+            rankParent.SetActive(true);
+            experience.text = user.experience.ToString();
+            progress.fillAmount = UnityEngine.Random.Range(0.15f, 0.7f);
+            GameObject[] child =  { 
+                rankParent.transform.GetChild(0).gameObject ,
+                rankParent.transform.GetChild(1).gameObject ,
+                rankParent.transform.GetChild(2).gameObject ,
+                rankParent.transform.GetChild(3).gameObject ,
+            };
+            foreach (GameObject childItem in child)
+            {
+                childItem.SetActive(false);
+            }
 
+            user.UpdateRank();
+            Debug.Log(user.rank);
+
+            switch (user.rank)
+            {
+                case 1:
+                    child[0].SetActive(true);
+                    break;
+                case 2:
+                    child[1].SetActive(true);
+                    break;
+                case 3:
+                    child[2].SetActive(true);
+                    break;
+                case 4:
+                    child[3].SetActive(true);
+                    break;
+            }
         }
 
     }
@@ -83,6 +132,8 @@ public class Login : MonoBehaviour
             loginUI.SetActive(false);
             logInButton.SetActive(false);
 
+            UpdateRank();
+
         }
         return;
     }
@@ -91,7 +142,9 @@ public class Login : MonoBehaviour
         user = null;
 
         LogOut.SetActive(false);
-        logInButton.SetActive(false);
+        logInButton.SetActive(true);
+
+        UpdateRank();
 
     }
 
@@ -137,6 +190,8 @@ public class Login : MonoBehaviour
             LogOut.SetActive(true);
             registerUI.SetActive(false);
             logInButton.SetActive(false);
+
+            UpdateRank();
         }
         return;
     }
